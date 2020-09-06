@@ -6,10 +6,12 @@ import java.io.InputStreamReader;
 
 public class FourthTask {
     public static void main(String[] args) throws IOException {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int number = Integer.parseInt(reader.readLine());
 
         while (true) {
+
             if (number > 0) {
                 ++number;
                 System.out.println(number);
