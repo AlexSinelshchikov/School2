@@ -10,24 +10,21 @@ public class FourthTask {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int number = Integer.parseInt(reader.readLine());
 
-        while (true) {
-
-            if (number > 0) {
-                ++number;
-                System.out.println(number);
-                break;
-            } else if (number == 0) {
-                number = 10;
-                System.out.println(number);
-                break;
-            } else if (number < 0) {
-                number -= 2;
-                System.out.println(number);
-                break;
-            }
+        if (number > 0) {
+            ++number;
+        } else if (number == 0) {
+            number = 10;
+        } else {
+            number -= 2;
         }
+
+        System.out.println(number);
     }
 }
+
+
+
+
 
 
 

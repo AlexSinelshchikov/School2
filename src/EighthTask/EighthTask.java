@@ -1,34 +1,17 @@
 package EighthTask;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class EighthTask {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(-10);
-        list.add(5);
-        list.add(6);
-        list.add(45);
-        list.add(23);
-        list.add(-45);
-        list.add(-34);
-        list.add(0);
-        list.add(32);
-        list.add(56);
-        list.add(-1);
-        list.add(2);
-        list.add(-2);
+        int[] list = new int[]{1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
 
-        System.out.println("Максимальное значение:" + " " + Collections.max(list));
-        positiveSum(list);
-        sumEvenNegative(list);
-        quantityPositive(list);
-        averageArithmetic(list);
+        getMaximumValue(list);
+        getPositiveSum(list);
+        getSumEvenNegative(list);
+        getQuantityPositive(list);
+        getAverageArithmetic(list);
     }
 
-    public static void positiveSum(ArrayList<Integer> list) {
+    public static void getPositiveSum(int[] list) {
         int sum = 0;
         for (Integer integer : list) {
             if (integer > 0) {
@@ -38,7 +21,7 @@ public class EighthTask {
         System.out.println("Сумма положительных элементов массива:" + " " + sum);
     }
 
-    public static void sumEvenNegative(ArrayList<Integer> list) {
+    public static void getSumEvenNegative(int[] list) {
         int sum = 0;
         for (int tmpInt : list) {
             if (tmpInt % 2 == 0 && tmpInt < 0) {
@@ -48,18 +31,17 @@ public class EighthTask {
         System.out.println("Сумма четных отрицательных элементов массива:" + " " + sum);
     }
 
-    public static void quantityPositive(ArrayList<Integer> list) {
+    public static void getQuantityPositive(int[] list) {
         int sumQuantity = 0;
         for (int quantity : list) {
             if (quantity > 0) {
                 sumQuantity++;
             }
         }
-
         System.out.println("Количество положительных элементов массива:" + " " + sumQuantity);
     }
 
-    public static void averageArithmetic(ArrayList<Integer> list) {
+    public static void getAverageArithmetic(int[] list) {
         double sumNumber = 0;
         double sumAll = 0;
         for (int temp : list) {
@@ -71,7 +53,23 @@ public class EighthTask {
         double arithmetic = sumAll / sumNumber;
         System.out.println("Среднее арифметическое отрицательных элементов:" + " " + arithmetic);
     }
+
+    public static void getMaximumValue(int[] list) {
+        int maximum = list[0];
+        for (int i = 1; i < list.length; i++) {
+            maximum = Math.max(maximum, list[i]);
+        }
+        System.out.println("Максимальное значение:" + " " + maximum);
+    }
 }
+
+
+
+
+
+
+
+
 
 
 

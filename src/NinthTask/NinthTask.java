@@ -5,24 +5,22 @@ import java.util.Collections;
 
 public class NinthTask {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(15);
-        list.add(10);
-        list.add(51);
-        list.add(-6);
-        list.add(-5);
-        list.add(3);
-        list.add(-10);
-        list.add(-34);
-        list.add(0);
-        list.add(32);
-        list.add(5);
-        list.add(6);
-        list.add(-12);
-        list.add(24);
-        list.add(-52);
 
-        Collections.reverse(list);
-        System.out.println(list);
+        int[] list = new int[] {15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 5, 6, -12, 24, -52};
+        realizeReverse(list);
+    }
+
+    public static void realizeReverse (int[] list) {
+
+        for (int i = 0; i < list.length / 2; i++) {
+            int temp = list[i];
+            list[i] = list[list.length - i - 1];
+            list[list.length - i - 1] = temp;
+        }
+        for (int g : list) {
+            System.out.print(g + " ");
+        }
     }
 }
+
+

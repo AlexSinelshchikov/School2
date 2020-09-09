@@ -9,27 +9,39 @@ public class SixthTask {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Введите целое число");
-        int number  = Integer.parseInt(reader.readLine());
+        int number = Integer.parseInt(reader.readLine());
 
-        propertyNumber(number);
+        System.out.println(getParityNumber(number) + "." + " " + getPositiveNegativeNumber(number));
     }
 
-    public static void propertyNumber (int number ) {
+    public static String getParityNumber(int number) {
+
+        String parity;
 
         if (number == 0) {
-            System.out.println("Значение является нулевым числом.");
-        }
-        else if (number > 0 && number % 2 == 0) {
-            System.out.println("Четное, положительное значение.");
-        }
-            else if (number > 0 && number % 2 != 0) {
-            System.out.println("Нечетное, положительное значение.");
-        }
-            else if (number < 0 && number % 2 == 0 ) {
-            System.out.println("Четное, отрицательное значение.");
-        }
-            else if (number < 0 && number % 2 != 0) {
-            System.out.println("Нечетное, отрицательное значение");
-        }
+            parity = "Значение является нулевым числом";
+        } else if (number % 2 == 0) {
+            parity = "Четное число";
+        } else
+            parity = "Нечетное число";
+        return parity;
+
+    }
+
+    public static String getPositiveNegativeNumber(int number) {
+
+        String positiveNegative;
+
+        if (number == 0) {
+            positiveNegative = "";
+        } else if (number > 0) {
+            positiveNegative = "Положительное число.";
+        } else positiveNegative = "Отрицательное число.";
+
+        return positiveNegative;
     }
 }
+    
+
+
+
