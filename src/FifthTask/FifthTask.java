@@ -1,31 +1,40 @@
 package FifthTask;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class FifthTask {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args)  {
+        Scanner input = new Scanner(System.in);
 
-        for (int d = 1; d <= 1; d++) {
-            System.out.println("Введите первое число");
-            int first = Integer.parseInt(reader.readLine());
+        int[] specifiedNumber = new int[3];
+        int temp = 0;
 
-            System.out.println("Введите второе число");
-            int second = Integer.parseInt(reader.readLine());
-
-            System.out.println("Введите третье число");
-            int third = Integer.parseInt(reader.readLine());
-
-            int least;
-            if (first < second && first < third) {
-                least = first;
-            } else least = Math.min(second, third);
-
-            System.out.println("Минимальное значение:" + " " + least);
+        for (int ignored : specifiedNumber) {
+            specifiedNumber[temp] = input.nextInt();
+            temp++;
         }
+
+        System.out.println(getMinimum(specifiedNumber));
+    }
+
+    public static int getMinimum(int[] specifiedNumber) {
+
+        int minimum = specifiedNumber[0];
+
+        for (var value : specifiedNumber) {
+            if (minimum > value) {
+                minimum = value;
+            }
+        }
+
+        return minimum;
     }
 }
+
+
+
+
+
+
 
 
